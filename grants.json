@@ -1,0 +1,115 @@
+{
+  "snowflake_roles": [
+    {"name": "Network-ADMIN"},
+    {"name": "Network-DE"},
+    {"name": "Network-DA-1"},
+    {"name": "Network-DA-2"}
+  ],
+  "snowflake_database_grants": [
+    {
+      "database_name": "network",
+      "role": "Network-ADMIN",
+      "privilege": ["CREATE DATABASE ROLE", "CREATE SCHEMA", "MODIFY", "MONITOR", "ALL" ]
+    },
+    {
+      "database_name": "network",
+      "role": "Network-DE",
+      "privilege": [ "CREATE DATABASE ROLE", "CREATE SCHEMA", "MODIFY", "MONITOR" ]
+    },
+    {
+      "database_name": "network",
+      "role": "Network-DA-1",
+      "privilege": ["USAGE" ]
+    },
+    {
+      "database_name": "network",
+      "role": "Network-DA-2",
+      "privilege": [ "USAGE" ]
+    }
+  ],
+  "snowflake_schema_grants": [
+    {
+      "schema_name": "network",
+      "database_name": "network",
+      "role": "Network-ADMIN",
+      "privilege": ["CREATE FILE FORMAT", "CREATE TABLE", "USAGE", "ALL PRIVILEGES", "ADD SEARCH OPTIMIZATION", "CREATE PROCEDURE", "CREATE SEQUENCE", "CREATE STREAM", "MODIFY", "CREATE EXTERNAL TABLE", "CREATE FUNCTION", "CREATE TASK", "CREATE MASKING POLICY", "MONITOR", "CREATE ROW ACCESS POLICY", "CREATE STREAMLIT", "CREATE TAG", "CREATE PIPE", "CREATE SESSION POLICY", "CREATE STAGE", "CREATE VIEW", "CREATE DYNAMIC TABLE", "CREATE MATERIALIZED VIEW", "CREATE TEMPORARY TABLE"]
+    },
+    {
+      "schema_name": "network",
+      "database_name": "network",
+      "role": "Network-DE",
+      "privilege": ["CREATE FILE FORMAT", "CREATE TABLE", "USAGE", "ALL PRIVILEGES", "ADD SEARCH OPTIMIZATION", "CREATE PROCEDURE", "CREATE SEQUENCE", "CREATE STREAM", "MODIFY", "CREATE EXTERNAL TABLE", "CREATE FUNCTION", "CREATE TASK", "CREATE MASKING POLICY", "MONITOR", "CREATE ROW ACCESS POLICY", "CREATE STREAMLIT", "CREATE TAG", "CREATE PIPE", "CREATE SESSION POLICY", "CREATE STAGE", "CREATE VIEW", "CREATE DYNAMIC TABLE", "CREATE MATERIALIZED VIEW", "CREATE TEMPORARY TABLE"]
+    },
+    {
+      "schema_name": "network",
+      "database_name": "network",
+      "role": "Network-DA-1",
+      "privilige" : ["USAGE"]
+  },
+  {
+      "schema_name": "network",
+      "database_name": "network",
+      "role": "Network-DA-2",
+      "privilige" : ["USAGE"]
+  }],
+  "snowflake_table_grants": [
+    {
+      "database_name": "network",
+      "schema_name": "network",
+      "table_name": "*",
+      "role": "Network-ADMIN",
+      "privilege": ["SELECT", "INSERT", "DELETE","TRUNCATE", "UPDATE", "ALL"]
+    },
+    {
+      "database_name": "network",
+      "schema_name": "network",
+      "table_name": "*",
+      "role": "Network-DE",
+      "privilege": ["SELECT", "INSERT", "TRUNCATE"]
+    },
+    {
+      "database_name": "network",
+      "schema_name": "network",
+      "table_name": "CAPACITY_FCT",
+      "role": "Network-DA-1",
+      "privilege": ["SELECT"]
+    },
+    {
+      "database_name": "network",
+      "schema_name": "network",
+      "table_name": "CAPACITY_FCT_STG",
+      "role": "Network-DA-2",
+      "privilege": ["SELECT"]
+    }
+  ],
+  "snowflake_view_grants": [
+    {
+      "database_name": "network",
+      "schema_name": "network",
+      "view_name": "*",
+      "role": "Network-ADMIN",
+      "privilege": ["ALL"]
+    },
+    {
+      "database_name": "network",
+      "schema_name": "network",
+      "view_name": "*",
+      "role": "Network-DE",
+      "privilege": "ALL"
+    },
+    {
+      "database_name": "network",
+      "schema_name": "network",
+      "view_name": "table1",
+      "role": "Network-DA-1",
+      "privilege": "SELECT"
+    },
+    {
+      "database_name": "network",
+      "schema_name": "finance",
+      "view_name": "table2",
+      "role": "Network-DA-2",
+      "privilege": ["SELECT"]
+    }
+  ]
+}
